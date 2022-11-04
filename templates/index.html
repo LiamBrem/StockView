@@ -7,6 +7,10 @@
     <title>Main HTML</title>
 </head>
 <body>
+
+<form action="{{ url_for('index')}}" method="post">
+    <label for="stockSymbol">SYMBOL:</label>
+    <input type="text" id="stockSymbol" name="symbol" placeholder="symbol">
     
 </body>
 </html>
