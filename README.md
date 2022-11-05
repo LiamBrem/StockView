@@ -37,3 +37,5 @@ Flask in VSCode: https://code.visualstudio.com/docs/python/tutorial-flask
 Flask w/ API: https://python-adv-web-apps.readthedocs.io/en/latest/flask2.html
 
 Github Forking: https://docs.github.com/en/get-started/quickstart/contributing-to-projects
+
+Flask Templates: https://pythonbasics.org/flask-tutorial-templates/#:~:text=flask%20template%20for%20loop&text=For%20code%20the%20tags%20%7B%25,the%20tags%20%7B%7B%20and%20%7D%7D%20.
