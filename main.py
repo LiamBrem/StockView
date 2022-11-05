@@ -17,7 +17,7 @@ def index():
     if request.method == "POST":
         symbol = request.form.get("symbol", "")
 
-        return fetchStockInfo(symbol)
+        return render_template("displayStock.html", name=fetchStockInfo(symbol))
 
     return render_template("index.html")
 
