@@ -8,7 +8,9 @@ have the user type in a stock symbol, then display information about that
 
 To Do (short term)
 ---
+Next Steps: have the user select a date for the stock - then maybe display a graph showing that using matplotlib
 
+we might want to switch to the alpaca api soon
 
 Resources
 ---
