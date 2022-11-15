@@ -14,6 +14,8 @@ we might want to switch to the alpaca api soon
 
 Also, it may be easier to make a new python file thats explicitly python and we can do a bunch of the API stuff there, then in main.py we can do all the flask stuff?
 
+Maybe we could make a web scraper that scrapes some website and finds some stocks that are possibly doing good and then analyze them & buy them. 
+
 Resources
 ---
 API tutorial: https://towardsdatascience.com/quick-fire-guide-to-apis-in-python-891dd98c8877
