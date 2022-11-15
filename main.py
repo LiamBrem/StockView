@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import requests
-import api_functions
+#import api_functions
 
 API_KEY = "dQ_0vBbHkOiJyjlF4QQ8vK_Mq5Ss2eKp"
 
