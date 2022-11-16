@@ -1,17 +1,11 @@
 from flask import Flask, request, render_template
-import requests
-#import api_functions
-
-API_KEY = "dQ_0vBbHkOiJyjlF4QQ8vK_Mq5Ss2eKp"
+import api_functions
 
 app = Flask(__name__)
 
 
 def fetchStockInfo(symbol):
-    API_URL = (f"https://api.polygon.io/v2/aggs/ticker/{symbol}/range/1/day/2022-11-03/2022-11-04?adjusted=true&sort=asc&limit=120&apiKey={API_KEY}")
-    res = requests.get(API_URL)
-
-    return str(res.json())
+    return str(api_functions.stockInfo(symbol))
 
 @app.route("/", methods=['POST', 'GET'])
 def index():
