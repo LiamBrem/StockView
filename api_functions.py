@@ -27,4 +27,4 @@ def stockInfo(symbol):
   return symbolHistory["Close"][-1]
 
   
-stockInfo("AEO")
+stockInfo("SPY")
