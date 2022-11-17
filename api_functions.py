@@ -24,7 +24,7 @@ def stockInfo(symbol):
   
 
   #bruh 
-  return symbol.history(period="1d", interval="1m")
+  return symbolHistory["Close"][-1]
 
   
 stockInfo("AEO")
