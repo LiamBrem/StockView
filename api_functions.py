@@ -18,6 +18,8 @@ def stockInfo(symbol):
   #this takes the first value of all the Closed values
   #could potentially iterate through it
   #if you just do print(symbolHistory) then it will give you everything
+  print(symbolHistory)
+
   print(symbolHistory["Close"][1])
   
 
@@ -25,4 +27,4 @@ def stockInfo(symbol):
   return symbol.history(period="1d", interval="1m")
 
   
-stockInfo("SPY")
+stockInfo("AEO")
