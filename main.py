@@ -16,6 +16,7 @@ def index():
         period = "1d"
         interval = "1m"
 
+        #Figure out how to put this into a seperate function
         if request.form.get('hour') == "1h":
             period = "1h"
             interval = "1m"
