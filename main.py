@@ -13,9 +13,35 @@ def index():
         
         inputPeriod = request.form.get("dateInput")
 
+<<<<<<< HEAD
         interval = checkInterval(inputPeriod)
 
         return render_template("displayStock.html", info=fetchStockInfo(symbol, inputPeriod, interval))
+=======
+        #Figure out how to put this into a seperate function
+        if request.form.get('hour') == "1h":
+            period = "1h"
+            interval = "1m"
+        elif request.form.get("day") == "1d":
+            period = "1d"
+            interval = "1m"
+        elif request.form.get("week") == "1wk":
+            period = "1wk"
+            interval = "1d"
+        elif request.form.get("month") == "1mo":
+            period = "1mo"
+            interval = "1d"
+        elif request.form.get("sixmonths") == "6mo":
+            period = "6mo"
+            interval = "1d"
+        elif request.form.get("year") == "1y":
+            period = "1y"
+            interval = "1wk"
+            
+            
+            
+        return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval))
+>>>>>>> temp-branch
 
     return render_template("index.html")
 
