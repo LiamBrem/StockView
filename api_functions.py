@@ -8,6 +8,9 @@ import yfinance as yf
 
 
 def stockInfo(symbol, period, interval):
+
+    print("\n" + symbol + period + interval)
+
     # this initializes this shit or sum
     symbol = yf.Ticker(symbol)
 
@@ -19,11 +22,12 @@ def stockInfo(symbol, period, interval):
     # this takes the first value of all the Closed values: symbolHistory["Close"][1]
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
-
+  
+    print(symbolHistory)
 
 
     # bruh
     return symbolHistory["Close"][-1]
 
 
-#print(stockInfo("AAPL", "1wk", "1d"))
+print(stockInfo("GOOGL", "1h", "1m"))
