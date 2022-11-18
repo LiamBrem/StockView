@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main HTML</title>
 </head>
+
 <body>
 
-<form action="{{ url_for('index')}}" method="post">
-    <label for="stockSymbol">SYMBOL:</label>
-    <input type="text" id="stockSymbol" name="symbol" placeholder="symbol">
+    <form action="{{ url_for('index')}}" method="post">
+        <label for="stockSymbol">SYMBOL:</label>
+        <input type="text" id="stockSymbol" name="symbol" placeholder="symbol">
 
-    <h1>{{ name }}</h1>
-    
+        <form method="post" action="/">
+            <input type="submit" value="1h" name="hour" />
+            <input type="submit" value="1d" name="day" />
+            <input type="submit" value="1w" name="week" />
+            <input type="submit" value="1m" name="month" />
+            <input type="submit" value="6m" name="sixmonths" />
+            <input type="submit" value="1y" name="year" />
+        </form>
+
 </body>
+
 </html>
