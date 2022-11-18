@@ -12,8 +12,8 @@ def index():
         symbol = request.form.get("symbol", "")
         print("\n" + symbol)
 
-        period = "1h"
-        interval = "1d"
+        period = ""
+        interval = ""
 
         #Figure out how to put this into a seperate function
         if request.form.get('hour') == "1h":

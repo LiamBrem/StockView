@@ -23,11 +23,11 @@ def stockInfo(symbol, period, interval):
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
   
-    #print(symbolHistory)
+    print(symbolHistory)
 
 
     # bruh
-    return symbolHistory["Close"][-1]
+    #return symbolHistory["Open"][1]
 
 
-#print(stockInfo("GOOGL", "1h", "1m"))
+print(stockInfo("AAPL", "1h", "1m"))
