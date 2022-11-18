@@ -8,15 +8,13 @@ import yfinance as yf
 
 
 def stockInfo(symbol, period, interval):
-
-    print("\n" + symbol + period + interval)
-
     # this initializes this shit or sum
-    symbol = yf.Ticker(symbol)
+    symbol_ticker = yf.Ticker(symbol)
 
     # gets all the information each minute of the entire previous day
     # we should make the period and interval variables
-    symbolHistory = symbol.history(period=period, interval=interval)
+    symbolHistory = symbol_ticker.history(period=period, interval=interval)
+
 
     # Each item is just stored in a list within a list
     # this takes the first value of all the Closed values: symbolHistory["Close"][1]
@@ -24,10 +22,11 @@ def stockInfo(symbol, period, interval):
     # if you just do print(symbolHistory) then it will give you everything
   
     print(symbolHistory)
+    print(symbolHistory["High"][-1])
 
 
     # bruh
-    #return symbolHistory["Open"][1]
+    return symbolHistory["High"][1]
 
 
-print(stockInfo("AAPL", "1h", "1m"))
+stockInfo("AAPL", "1wk", "1h")

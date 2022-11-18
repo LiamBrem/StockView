@@ -12,19 +12,17 @@ def index():
         symbol = request.form.get("symbol", "")
         print("\n" + symbol)
 
+
         period = ""
         interval = ""
 
         #Figure out how to put this into a seperate function
-        if request.form.get('hour') == "1h":
-            period = "1h"
-            interval = "1m"
-        elif request.form.get("day") == "1d":
+        if request.form.get("day") == "1d":
             period = "1d"
             interval = "1m"
         elif request.form.get("week") == "1wk":
             period = "1wk"
-            interval = "1d"
+            interval = "1h"
         elif request.form.get("month") == "1mo":
             period = "1mo"
             interval = "1d"
