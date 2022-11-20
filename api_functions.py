@@ -11,6 +11,8 @@ def stockInfo(symbol, period, interval):
     # this initializes this shit or sum
     symbol_ticker = yf.Ticker(symbol)
 
+    print("\n" + symbol + period + interval)
+
     # gets all the information each minute of the entire previous day
     # we should make the period and interval variables
     symbolHistory = symbol_ticker.history(period=period, interval=interval)
@@ -21,12 +23,12 @@ def stockInfo(symbol, period, interval):
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
   
-    print(symbolHistory)
-    print(symbolHistory["High"][-1])
+    #print(symbolHistory)
+    #print(symbolHistory["High"][-1])
 
 
     # bruh
     return symbolHistory["High"][1]
 
 
-stockInfo("AAPL", "1wk", "1h")
+#print(stockInfo("AAPL", "1wk", "1h"))
