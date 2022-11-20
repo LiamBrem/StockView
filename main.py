@@ -10,25 +10,12 @@ def index():
 
         symbol = request.form.get("symbol", "")
 
-        period = None
-        interval = None
+        period = request.form.get("submit")
+
+        interval = selectInterval(period)
 
         #Figure out how to put this into a seperate function
-        if request.form.get("submit") == "1d":
-            period = "1d"
-            interval = "1m"
-        elif request.form.get("submit") == "1wk":
-            period = "1wk"
-            interval = "1h"
-        elif request.form.get("submit") == "1mo":
-            period = "1mo"
-            interval = "1d"
-        elif request.form.get("submit") == "6mo":
-            period = "6mo"
-            interval = "1d"
-        elif request.form.get("submit") == "1y":
-            period = "1y"
-            interval = "1wk"
+        
 
         return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval))
 
@@ -37,6 +24,20 @@ def index():
 
 def fetchStockInfo(symbol, period, interval):
     return str(api_functions.stockInfo(symbol, period, interval))
+
+def selectInterval(period):
+    if period == "1d":
+        interval = "1m"
+    elif period == "1wk":
+        interval = "1h"
+    elif period == "1mo":
+        interval = "1d"
+    elif period == "6mo":
+        interval = "1d"
+    elif period == "1y":
+        interval = "1wk"
+
+    return interval
 
 
 
