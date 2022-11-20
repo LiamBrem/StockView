@@ -12,9 +12,8 @@ def index():
         symbol = request.form.get("symbol", "")
         print("\n" + symbol)
 
-
-        period = ""
-        interval = ""
+        period = "1mo"
+        interval = "1d"
 
         #Figure out how to put this into a seperate function
         if request.form.get("day") == "1d":
