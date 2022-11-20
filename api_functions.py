@@ -17,18 +17,15 @@ def stockInfo(symbol, period, interval):
     # we should make the period and interval variables
     symbolHistory = symbol_ticker.history(period=period, interval=interval)
 
-
     # Each item is just stored in a list within a list
     # this takes the first value of all the Closed values: symbolHistory["Close"][1]
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
-  
-    #print(symbolHistory)
-    #print(symbolHistory["High"][-1])
 
+    # print(symbolHistory)
 
     # bruh
-    return symbolHistory["High"][1]
+    return symbolHistory["Close"][-1]
 
 
-#print(stockInfo("AAPL", "1wk", "1h"))
+print(stockInfo("AAPL", "1wk", "1h"))

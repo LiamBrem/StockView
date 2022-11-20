@@ -12,10 +12,7 @@ def index():
 
         period = request.form.get("submit")
 
-        interval = selectInterval(period)
-
-        #Figure out how to put this into a seperate function
-        
+        interval = selectInterval(period)        
 
         return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval))
 
