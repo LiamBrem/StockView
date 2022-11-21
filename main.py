@@ -1,6 +1,12 @@
 from flask import Flask, request, render_template
 import api_functions
 
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+import base64
+from io import BytesIO
+
 app = Flask(__name__)
 
 
@@ -9,12 +15,20 @@ def index():
     if request.method == "POST":
 
         symbol = request.form.get("symbol", "")
-
         period = request.form.get("submit")
-
         interval = selectInterval(period)        
 
-        return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval))
+        ###
+
+        # Save it to a temporary buffer.
+        fig = api_functions.retrieveGraph(symbol,period,interval)
+        buf = BytesIO()
+        fig.savefig(buf, format="png")
+        # Embed the result in the html output.
+        data = base64.b64encode(buf.getbuffer()).decode("ascii")
+        ###
+
+        return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval), image=f"data:image/png;base64,{data}")
 
     return render_template("index.html")
 

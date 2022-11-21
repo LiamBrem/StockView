@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
+import chart
+
 # source of stocks api
 import yfinance as yf
 
@@ -21,11 +23,13 @@ def stockInfo(symbol, period, interval):
     # this takes the first value of all the Closed values: symbolHistory["Close"][1]
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
-
-    # print(symbolHistory)
-
-    # bruh
+    print(symbolHistory["Close"][-1])
     return symbolHistory["Close"][-1]
 
+def retrieveGraph(symbol, period, interval):
+    history = yf.Ticker(symbol).history(period=period, interval=interval)
 
-print(stockInfo("AAPL", "1wk", "1h"))
+    return chart.getGraphFig(symbol, history)
+
+
+retrieveGraph("AAPL", "1y", "1d")
