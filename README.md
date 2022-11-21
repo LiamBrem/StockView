@@ -8,11 +8,12 @@ have the user type in a stock symbol, then display information about that
 
 To Do (short term)
 ---
-Next Steps: have the user select a date for the stock - then maybe display a graph showing that using matplotlib
-
-we might want to switch to the alpaca api soon
 
 Also, it may be easier to make a new python file thats explicitly python and we can do a bunch of the API stuff there, then in main.py we can do all the flask stuff?
+
+use try/except if a user inputs a symbol that doesn't exist 
+
+everything that is happening is in the same url: we're gonna have to do some more url routing
 
 Maybe we could make a web scraper that scrapes some website and finds some stocks that are possibly doing good and then analyze them & buy them. 
 

@@ -1,8 +1,3 @@
-from datetime import date, timedelta
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-
 import chart
 
 # source of stocks api
