@@ -6,22 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main HTML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
 </head>
 
 <body>
 
-    <! -- both the buttons and input have to be in the same form for it to take the information at the same tim -->
+    <div class="container">
 
-        <form action="{{ url_for('index')}}" method="post">
-            <label for="stockSymbol">SYMBOL:</label>
-            <input type="text" id="stockSymbol" name="symbol" placeholder="symbol">
+        <form action="{{ url_for('index')}}" method="post" id="main">
 
-            <input type="submit" value="1d" name="submit" />
-            <input type="submit" value="1wk" name="submit" />
-            <input type="submit" value="1mo" name="submit" />
-            <input type="submit" value="6mo" name="submit" />
-            <input type="submit" value="1y" name="submit" />
+            <h2>Input Symbol</h2>
+            <div class="input-parent">
+                <label for="stockSymbol">Symbol</label>
+                <input type="text" id="stockSymbol" name="symbol" placeholder="symbol">
+            </div>
+
+            <div class="periodButtons">
+                <input type="submit" value="1d" name="submit" />
+                <input type="submit" value="1wk" name="submit" />
+                <input type="submit" value="1mo" name="submit" />
+                <input type="submit" value="6mo" name="submit" />
+                <input type="submit" value="1y" name="submit" />
+            </div>
         </form>
+    </div>
 
 </body>
 
