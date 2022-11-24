@@ -18,6 +18,7 @@ def index():
         period = request.form.get("submit")
         interval = selectInterval(period)        
 
+        ###
 
         # Save it to a temporary buffer.
         fig = api_functions.retrieveGraph(symbol,period,interval)
@@ -25,8 +26,9 @@ def index():
         fig.savefig(buf, format="png")
         # Embed the result in the html output.
         data = base64.b64encode(buf.getbuffer()).decode("ascii")
+        ###
 
-        return render_template("displayStock.html", info=fetchStockInfo(symbol, period, interval), image=f"data:image/png;base64,{data}")
+        return render_template("displayStock.html", info=symbol, image=f"data:image/png;base64,{data}")
 
     return render_template("index.html")
 

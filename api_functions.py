@@ -18,7 +18,7 @@ def stockInfo(symbol, period, interval):
     # this takes the first value of all the Closed values: symbolHistory["Close"][1]
     # could potentially iterate through it
     # if you just do print(symbolHistory) then it will give you everything
-    print(symbolHistory["Close"][-1])
+    print(symbolHistory)
     return symbolHistory["Close"][-1]
 
 def retrieveGraph(symbol, period, interval):
@@ -27,4 +27,4 @@ def retrieveGraph(symbol, period, interval):
     return chart.getGraphFig(symbol, history)
 
 
-retrieveGraph("AAPL", "1y", "1d")
+stockInfo("AAPL", "1y", "1d")
