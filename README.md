@@ -1,5 +1,6 @@
-# StockAnalysis
-A program to analyze specific stocks, view their history, and view recommendations on their performances
+# StockView
+A program that displays the graph of a stock that the user picks and the interval they select
+Made using Flask & MatplotLib
 
 Functionality (What we want it to do)
 ---
